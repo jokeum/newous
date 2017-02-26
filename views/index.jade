@@ -1,0 +1,23 @@
+extends layout
+
+block content
+
+  .swiper-container
+    .swiper-wrapper
+      .swiper-slide
+        | nous
+        | intro
+      .swiper-slide
+        | works
+        | horizontal slides
+        //- != JSON.stringify(records.posts[0].title.rendered)
+        != records.posts[0].title.rendered
+      .swiper-slide
+        | team members
+        | horizontal slides
+      .swiper-slide
+        | contacts
+
+  //- h3 Welcome to roots!
+  //- :marked
+  //-   Find tutorials and documentation at http://roots.cx : )
