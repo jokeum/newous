@@ -5,18 +5,20 @@ block content
   .swiper-container
     .swiper-wrapper
       .swiper-slide
-        | nous
-        | intro
+        h1 nous
+        p intro
       .swiper-slide
-        | works
-        | horizontal slides
-        //- != JSON.stringify(records.posts[0].title.rendered)
-        != records.posts[0].title.rendered
+        h1 works
+        .inner-swiper
+          .swiper-wrapper
+            for post in records.posts.length ? records.posts : ['there is no one']
+              .swiper-slide
+                != post.title.rendered
       .swiper-slide
-        | team members
-        | horizontal slides
+        h1 team members
+        p horizontal slides
       .swiper-slide
-        | contacts
+        h1 contacts
 
   //- h3 Welcome to roots!
   //- :marked

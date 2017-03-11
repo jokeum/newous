@@ -1,6 +1,10 @@
 {
   "name": "newous",
   "description": "nous site",
+  "scripts": {
+    "dev": "roots watch",
+    "deploy": "gh-pages -d dist"
+  },
   "dependencies": {
     "autoprefixer-stylus": "0.9.x",
     "axis": "0.6.x",
@@ -14,5 +18,8 @@
     "roots-records": "^0.5.1",
     "rupture": "0.6.x",
     "stylus": "0.54.x"
+  },
+  "devDependencies": {
+    "gh-pages": "^0.12.0"
   }
 }

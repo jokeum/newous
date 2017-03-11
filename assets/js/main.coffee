@@ -1,8 +1,15 @@
-console.log 'hello there!'
+console.log 'initialize swipers'
 
 new Swiper '.swiper-container',
-    direction: 'horizontal',
-    keyboardControl: true,
-    mousewheelControl: true,
-    hashnav: true,
-    hashnavWatchState: true,
+  direction: 'vertical',
+  keyboardControl: true,
+  mousewheelControl: true,
+  hashnav: true,
+  hashnavWatchState: true,
+
+new Swiper '.inner-swiper',
+  direction: 'horizontal',
+  keyboardControl: true,
+  mousewheelControl: true,
+  hashnav: true,
+  hashnavWatchState: true
