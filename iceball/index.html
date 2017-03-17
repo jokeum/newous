@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+    <title>iceball</title>
+    <link rel="stylesheet" href="jquery-ui.min.css">
+    <script src="jquery-3.2.0.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="jquery.ui.touch-punch.min.js"></script>
+    <style type="text/css">
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        html, body{
+            width: 100vw;
+            height: 100vh;
+        }
+        .bg{
+            width: 100%;
+            min-height: 100%;
+            background: #ddd url('img/bg.jpg') no-repeat;
+            background-size: contain;
+        }
+        @media only screen and (min-width: 768px){
+            .bg{
+                background-size: cover;
+            }
+        }
+        img {
+            position: absolute;
+        }
+        .lantern{
+            width: 30%;
+            left: 20%;
+            top: 10%;
+        }
+        .balloon{
+            width: 30%;
+            left: 60%;
+            top: 10%;
+        }
+    </style>
+    <script>
+        $(function(){
+            $(".hammer").draggable({
+                revert: true,
+                revertDuration: 200,
+                scroll: false,
+                drag: function(event, ui){
+                    if(ui.position.top < 0){
+                        $(event.target).fadeOut()
+                    }
+                }
+            })
+        })
+    </script>
+</head>
+<body>
+    <div class="bg">
+        <div class="test"></div>
+        <img src="img/lantern.jpg" class="lantern hammer"></img>
+        <img src="img/balloon.jpg" class="balloon hammer"></img>
+    </div>
+</body>
+</html>
