@@ -13,9 +13,9 @@ module.exports =
     js_pipeline(files: 'assets/js/*.coffee'),
     css_pipeline(files: 'assets/css/*.styl'),
     records(
-      # posts: { url: 'http://nous.twbbs.org/wp-json/wp/v2/posts' },
-      posts: { file: 'assets/data/posts.json' },
       # posts: { data: { home: 1, away: 0 } }
+      posts: { file: 'assets/data/posts.json' },
+      # posts: { url: 'http://nous.twbbs.org/wp-json/wp/v2/posts' },
     )
   ]
 

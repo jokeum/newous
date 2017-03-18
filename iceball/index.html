@@ -20,7 +20,7 @@
         .bg{
             width: 100%;
             min-height: 100%;
-            background: #ddd url('img/bg.jpg') no-repeat;
+            background: #ddd url('img/bg.jpeg') no-repeat;
             background-size: contain;
         }
         @media only screen and (min-width: 768px){
@@ -31,15 +31,25 @@
         img {
             position: absolute;
         }
-        .lantern{
-            width: 30%;
-            left: 20%;
-            top: 10%;
+        .ball1{
+            width: 19%;
+            left: 37%;
+            top: 58%;
         }
-        .balloon{
-            width: 30%;
-            left: 60%;
-            top: 10%;
+        .ball2{
+            width: 18%;
+            left: 28%;
+            top: 34.5%;
+        }
+        .ball3{
+            width: 16%;
+            left: 44%;
+            top: 25%;
+        }
+        .ball4{
+            width: 18%;
+            left: 54%;
+            top: 43%;
         }
     </style>
     <script>
@@ -49,8 +59,13 @@
                 revertDuration: 200,
                 scroll: false,
                 drag: function(event, ui){
+                    let width_per = event.target.width / window.innerWidth * 100
+                    let left_per = ui.position.left / window.innerWidth * 100
+                    let top_per = ui.position.top / window.innerHeight * 100
+                    $('.test').text(Math.floor(width_per)+'/'+Math.floor(left_per)+'/'+Math.floor(top_per))
+                    // if(ui.position.top < event.target.height / -2){
                     if(ui.position.top < 0){
-                        $(event.target).fadeOut()
+                        $(event.target).fadeOut(200)
                     }
                 }
             })
@@ -60,8 +75,10 @@
 <body>
     <div class="bg">
         <div class="test"></div>
-        <img src="img/lantern.jpg" class="lantern hammer"></img>
-        <img src="img/balloon.jpg" class="balloon hammer"></img>
+        <img src="img/ball.png" class="ball1 hammer"></img>
+        <img src="img/ball.png" class="ball2 hammer"></img>
+        <img src="img/ball.png" class="ball3 hammer"></img>
+        <img src="img/ball.png" class="ball4 hammer"></img>
     </div>
 </body>
 </html>
