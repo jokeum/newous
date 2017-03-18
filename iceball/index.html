@@ -1,84 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
-    <title>iceball</title>
-    <link rel="stylesheet" href="jquery-ui.min.css">
-    <script src="jquery-3.2.0.min.js"></script>
-    <script src="jquery-ui.min.js"></script>
-    <script src="jquery.ui.touch-punch.min.js"></script>
-    <style type="text/css">
-        *{
-            padding: 0;
-            margin: 0;
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+  <title>iceball</title>
+  <link rel="stylesheet" href="jquery-ui.min.css">
+  <script src="jquery-3.2.0.min.js"></script>
+  <script src="jquery-ui.min.js"></script>
+  <script src="jquery.ui.touch-punch.min.js"></script>
+  <style type="text/css">
+    * {
+      padding: 0;
+      margin: 0;
+    }
+    html,
+    body {
+      overflow: hidden;
+      width: 100vw;
+      height: 100vh;
+    }
+    .bg {
+      width: 100%;
+      min-height: 100%;
+      background: #ddd url('img/bg.jpeg') no-repeat;
+      background-size: contain;
+    }
+    @media only screen and (min-width: 768px) {
+      .bg {
+        background-size: cover;
+      }
+    }
+    img {
+      position: absolute;
+    }
+    .ball1 {
+      mix-blend-mode: screen;
+      width: 16.5%;
+      left: 38.5%;
+      top: 63%;
+    }
+    .ball2 {
+      mix-blend-mode: screen;
+      width: 15%;
+      left: 29.5%;
+      top: 40%;
+    }
+    .ball3 {
+      mix-blend-mode: screen;
+      width: 14%;
+      left: 45%;
+      top: 29%;
+    }
+    .ball4 {
+      mix-blend-mode: screen;
+      width: 15.5%;
+      left: 55.5%;
+      top: 48%;
+    }
+  </style>
+  <script>
+    $(function () {
+      $(".hammer").draggable({
+        revert: true,
+        revertDuration: 200,
+        scroll: false,
+        drag: function (event, ui) {
+          let width_per = event.target.width / window.innerWidth * 100
+          let left_per = ui.position.left / window.innerWidth * 100
+          let top_per = ui.position.top / window.innerHeight * 100
+          $('.test').text(Math.floor(width_per) + '/' + Math.floor(left_per) + '/' + Math.floor(top_per))
+          // if(ui.position.top < event.target.height / -2){
+          if (ui.position.top < 0) {
+            $(event.target).fadeOut(200)
+          }
         }
-        html, body{
-            width: 100vw;
-            height: 100vh;
-        }
-        .bg{
-            width: 100%;
-            min-height: 100%;
-            background: #ddd url('img/bg.jpeg') no-repeat;
-            background-size: contain;
-        }
-        @media only screen and (min-width: 768px){
-            .bg{
-                background-size: cover;
-            }
-        }
-        img {
-            position: absolute;
-        }
-        .ball1{
-            width: 19%;
-            left: 37%;
-            top: 58%;
-        }
-        .ball2{
-            width: 18%;
-            left: 28%;
-            top: 34.5%;
-        }
-        .ball3{
-            width: 16%;
-            left: 44%;
-            top: 25%;
-        }
-        .ball4{
-            width: 18%;
-            left: 54%;
-            top: 43%;
-        }
-    </style>
-    <script>
-        $(function(){
-            $(".hammer").draggable({
-                revert: true,
-                revertDuration: 200,
-                scroll: false,
-                drag: function(event, ui){
-                    let width_per = event.target.width / window.innerWidth * 100
-                    let left_per = ui.position.left / window.innerWidth * 100
-                    let top_per = ui.position.top / window.innerHeight * 100
-                    $('.test').text(Math.floor(width_per)+'/'+Math.floor(left_per)+'/'+Math.floor(top_per))
-                    // if(ui.position.top < event.target.height / -2){
-                    if(ui.position.top < 0){
-                        $(event.target).fadeOut(200)
-                    }
-                }
-            })
-        })
-    </script>
+      })
+    })
+  </script>
 </head>
 <body>
-    <div class="bg">
-        <div class="test"></div>
-        <img src="img/ball.png" class="ball1 hammer"></img>
-        <img src="img/ball.png" class="ball2 hammer"></img>
-        <img src="img/ball.png" class="ball3 hammer"></img>
-        <img src="img/ball.png" class="ball4 hammer"></img>
-    </div>
+  <div class="bg">
+    <div class="test"></div>
+    <img src="img/ball.png" class="ball1 hammer"></img>
+    <img src="img/ball.png" class="ball2 hammer"></img>
+    <img src="img/ball.png" class="ball3 hammer"></img>
+    <img src="img/ball.png" class="ball4 hammer"></img>
+  </div>
 </body>
 </html>
