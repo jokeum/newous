@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui"> -->
   <title>iceball</title>
   <link rel="stylesheet" href="jquery-ui.min.css">
   <script src="jquery-3.2.0.min.js"></script>
@@ -32,6 +32,9 @@
     }
     img {
       position: absolute;
+    }
+    .no {
+      display: none;
     }
     .ball1 {
       mix-blend-mode: screen;
@@ -81,7 +84,7 @@
 <body>
   <div class="bg">
     <div class="test"></div>
-    <img src="img/ball.png" class="ball1 hammer"></img>
+    <img src="img/ball.png" class="ball1 hammer no"></img>
     <img src="img/ball.png" class="ball2 hammer"></img>
     <img src="img/ball.png" class="ball3 hammer"></img>
     <img src="img/ball.png" class="ball4 hammer"></img>
