@@ -76,6 +76,10 @@
           if (ui.position.top < 0) {
             $(event.target).fadeOut(200)
           }
+          $(event.target).attr('src', 'img/ball2.png')
+        },
+        stop: function (event, ui) {
+          $(event.target).attr('src', 'img/ball.png')
         }
       })
     })
