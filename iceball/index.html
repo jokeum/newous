@@ -71,7 +71,7 @@
           let width_per = event.target.width / window.innerWidth * 100
           let left_per = ui.position.left / window.innerWidth * 100
           let top_per = ui.position.top / window.innerHeight * 100
-          $('.test').text(Math.floor(width_per) + '/' + Math.floor(left_per) + '/' + Math.floor(top_per))
+          // $('.test').text(Math.floor(width_per) + '/' + Math.floor(left_per) + '/' + Math.floor(top_per))
           // if(ui.position.top < event.target.height / -2){
           if (ui.position.top < 0) {
             $(event.target).fadeOut(200)
@@ -83,7 +83,7 @@
 </head>
 <body>
   <div class="bg">
-    <div class="test"></div>
+    <div class="test no"></div>
     <img src="img/ball.png" class="ball1 hammer no"></img>
     <img src="img/ball.png" class="ball2 hammer"></img>
     <img src="img/ball.png" class="ball3 hammer"></img>
