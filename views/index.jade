@@ -2,24 +2,26 @@ extends layout
 
 block content
 
+  .head
+    include head.jade
+
   .swiper-container
     .swiper-wrapper
-      .swiper-slide
-        h1 nous
-        p intro
-      .swiper-slide
-        h1 works
-        .inner-swiper
-          .swiper-wrapper
-            for post in records.posts.length ? records.posts : ['there is no one']
-              .swiper-slide
-                != post.title.rendered
-      .swiper-slide
-        h1 team members
-        p horizontal slides
-      .swiper-slide
-        h1 contacts
 
-  //- h3 Welcome to roots!
+      .swiper-slide
+        include intro.jade
+
+      .swiper-slide
+        include works.jade
+
+      .swiper-slide
+        include team.jade
+
+      .swiper-slide
+        include contact.jade
+
+  .foot
+    include foot.jade
+
   //- :marked
   //-   Find tutorials and documentation at http://roots.cx : )

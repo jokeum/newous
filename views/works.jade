@@ -1,0 +1,6 @@
+h1 works
+.inner-swiper
+  .swiper-wrapper
+    for post in records.posts.length ? records.posts : ['there is no one']
+      .swiper-slide
+        != post.title.rendered
