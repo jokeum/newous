@@ -7,15 +7,17 @@ css_pipeline = require 'css-pipeline'
 records      = require 'roots-records'
 
 module.exports =
-  ignores: ['readme.md', '**/layout.*', '**/_*', '.gitignore', 'ship.*conf']
+  ignores: ['readme.md', '**/layout.*', '**/_*', '.gitignore', 'ship.*conf', 'yarn.lock']
 
   extensions: [
     js_pipeline(files: 'assets/js/*.coffee'),
     css_pipeline(files: 'assets/css/*.styl'),
     records(
-      # posts: { data: { home: 1, away: 0 } }
-      posts: { file: 'assets/data/posts.json' },
-      # posts: { url: 'http://nous.twbbs.org/wp-json/wp/v2/posts' },
+      posts:
+        # url: 'http://nous.twbbs.org/wp-json/wp/v2/posts',
+        file: 'assets/data/posts.json',
+        # hook: (posts) ->
+        #   posts = (test post for post in posts)
     )
   ]
 

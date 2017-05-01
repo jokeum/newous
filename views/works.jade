@@ -2,5 +2,10 @@ h1 works
 .inner-swiper
   .swiper-wrapper
     for post in records.posts.length ? records.posts : ['there is no one']
-      .swiper-slide
-        != post.title.rendered
+      a.swiper-slide(href = post.link, target = '_blank')
+        h2!= post.title.rendered
+        //- - let media = 'http://nous.twbbs.org/wp-json/wp/v2/media/' + post.featured_media
+        - let media = 'http://jokeum.byethost17.com/nous/index.php/wp-json/wp/v2/media/' + post.featured_media
+        img.feature(src = media)
+        pre!= post.content.rendered
+
