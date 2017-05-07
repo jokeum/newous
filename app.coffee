@@ -15,6 +15,7 @@ module.exports =
     records(
       posts:
         # url: 'http://nous.twbbs.org/wp-json/wp/v2/posts',
+        # url: 'https://public-api.wordpress.com/rest/v1.1/sites/nousim.wordpress.com/posts/',
         file: 'assets/data/posts.json',
         # hook: (posts) ->
         #   posts = (test post for post in posts)
