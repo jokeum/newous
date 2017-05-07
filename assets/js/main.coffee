@@ -6,15 +6,16 @@ $ () ->
   doms.each () ->
     dom = $(this)
     media = dom.attr 'src'
-    $.ajax media,
-      crossDomain: true
-      dataType: 'jsonp'
-      jsonp: '_jsonp'
-    .done (data) ->
-      console.log data
-      dom.attr 'src', data.source_url
-    .fail (jqXHR, err) ->
-      console.log err
+    dom.replaceWith media
+#    $.ajax media,
+#      crossDomain: true
+#      dataType: 'jsonp'
+#      jsonp: '_jsonp'
+#    .done (data) ->
+#      console.log data
+#      dom.attr 'src', data.source_url
+#    .fail (jqXHR, err) ->
+#      console.log err
 
 new Swiper '.swiper-container',
   direction: 'vertical'
