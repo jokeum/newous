@@ -13,9 +13,14 @@ module.exports =
     js_pipeline(files: 'assets/js/*.coffee'),
     css_pipeline(files: 'assets/css/*.styl'),
     records(
+      media_link:
+        data: [
+          'http://jokeum.byethost17.com/nous/index.php/wp-json/wp/v2/media/'
+        ]
       posts:
         # url: 'http://nous.twbbs.org/wp-json/wp/v2/posts',
-        # url: 'https://public-api.wordpress.com/rest/v1.1/sites/nousim.wordpress.com/posts/',
+        # url: 'https://public-api.wordpress.com/rest/v1.1/sites/nousim.wordpress.com/posts',
+        # url: 'http://jokeum.byethost17.com/nous/index.php/wp-json/wp/v2/posts',
         file: 'assets/data/posts.json',
         # hook: (posts) ->
         #   posts = (test post for post in posts)
